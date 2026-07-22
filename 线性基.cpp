@@ -23,7 +23,7 @@ typedef struct linear_basis {
         return false;
     }
 
-    bool check(int a) {
+    bool check(long long a) {
         for (int i = bits_of_type - 1; i >= 0; i--) {
             if (a >> i & 1) {
                 if (!v[i]) return false;
