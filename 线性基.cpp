@@ -4,17 +4,21 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+ *  模板开始
+ */
+
 #define bits_of_type 63                 // int 需要改成31
 
 typedef struct linear_basis {
-    long long v[bits_of_type] = {};     // 也可以是 int
+    long long base[bits_of_type] = {};     // 也可以是 int
 
     bool add(long long a) {
         for (int i = bits_of_type - 1; i >= 0; i--) {
             if (a >> i & 1) {
-                if (v[i]) a ^= v[i];
+                if (base[i]) a ^= base[i];
                 else {
-                    v[i] = a;
+                    base[i] = a;
                     return true;
                 }
             }
@@ -26,8 +30,8 @@ typedef struct linear_basis {
     bool check(long long a) {
         for (int i = bits_of_type - 1; i >= 0; i--) {
             if (a >> i & 1) {
-                if (!v[i]) return false;
-                a ^= v[i];
+                if (!base[i]) return false;
+                a ^= base[i];
             }
         }
         return true;
@@ -36,11 +40,15 @@ typedef struct linear_basis {
     long long max() {
         long long max = 0;
         for (int i = bits_of_type - 1; i >= 0; i--) {
-            if (v[i]) max = max > (max ^ v[i]) ? max : max ^ v[i];
+            if (base[i]) max = max > (max ^ base[i]) ? max : max ^ base[i];
         }
         return max;
     }
 } linear_basis;
+
+/*
+ *  模板结束
+ */
 
 int main() {
     ios::sync_with_stdio(false);
