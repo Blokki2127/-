@@ -28,4 +28,5 @@ int main() {
     int a, b, p;
     cin >> a >> b >> p;
     cout << a << '^' << b << " mod " << p << '=' << fast_exponentiation(a, b, p) << endl;
+    return 0;
 }

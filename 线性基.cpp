@@ -10,7 +10,7 @@ using namespace std;
 
 #define bits_of_type 63                 // int 需要改成31
 
-typedef struct linear_basis {
+struct linear_basis {
     long long base[bits_of_type] = {};     // 也可以是 int
 
     bool add(long long a) {
@@ -44,7 +44,7 @@ typedef struct linear_basis {
         }
         return max;
     }
-} linear_basis;
+};
 
 /*
  *  模板结束
@@ -53,7 +53,6 @@ typedef struct linear_basis {
 int main() {
     ios::sync_with_stdio(false);
     cin.tie(nullptr);
-
     int n;
     cin >> n;
     long long a[n];
@@ -63,6 +62,5 @@ int main() {
         lb.add(i);
     }
     cout << lb.max() << endl;
-
     return 0;
 }

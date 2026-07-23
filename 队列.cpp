@@ -10,7 +10,7 @@ using namespace std;
 
 #define MAX_NUM 1000000
 
-typedef struct queue1 {
+struct queue1 {
     int a[MAX_NUM], size_of_queue = 0, front = 0;
 
     void push(int x) {
@@ -30,7 +30,7 @@ typedef struct queue1 {
     int size() {
         return size_of_queue;
     }
-} queue1;
+};
 
 /*
  *  模板 1 结束
@@ -40,7 +40,7 @@ typedef struct queue1 {
  *  模板 2 开始
  */
 
-typedef struct queue2 {
+struct queue2 {
     stack<int> s1, s2;
 
     void push(int x) {
@@ -70,7 +70,7 @@ typedef struct queue2 {
     int size() {
         return s1.size() + s2.size();
     }
-} queue2;
+};
 
 /*
  *  模板 2 结束
@@ -103,4 +103,5 @@ int main() {
                 break;
         }
     }
+    return 0;
 }
