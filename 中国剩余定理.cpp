@@ -1,7 +1,7 @@
 /// 中国剩余定理
 /// 模板 1 实现简单，只适用于互质的情况，时间复杂度 O(∏m) 一般弃用
 /// 模板 2 适应不互质的情况，时间复杂度 O(nlog(max(m)))
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 /*
@@ -26,7 +26,7 @@ long long chinese_remainde_theorem1(vector<pair<long long, long long>> v) {
  *  适应不互质的情况
  */
 
-long long ex_gcd(long long a, long long b, long long &x, long long &y) {
+long long ex_gcd(long long a, long long b, long long &x, long long &y) {    //扩展欧几里得算法
     if (b == 0) {
         x = 1, y = 0;
         return a;

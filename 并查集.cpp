@@ -5,6 +5,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+ *  模板开始
+ */
+
 struct union_find {
     vector<int> parent;
     vector<int> rank;
@@ -36,6 +40,10 @@ struct union_find {
         }
     }
 };
+
+/*
+ *  模板结束
+ */
 
 int main() {
     ios::sync_with_stdio(false);
